@@ -9,19 +9,19 @@ Steps to solve this Assignment :-
 2.Go to cloned repo directory and Build image using command :-
    cd DevOps_Assign02
    
-   docker build . -t assign02
+   docker build . -t assign2
 
 3. Start the container using command :- 
 
-   docker run --name dev_assign02 -p3306:3306 -d assign02
+   docker run --name dos_assign02 -p3306:3306 -d assign2
 
 4. Connect to MYSQL using a bash shell using command :-
    
-   docker exec -it dev_assign02 /bin/bash
+   docker exec -it dos_assign02 /bin/bash
    
-5. start MYSQL with Username = admin   and   Password = admin   using command :-
+5. start MYSQL with Username = pucsd   and   Password = pucsd   using command :-
    
-   mysql -uadmin -padmin
+   mysql -upucsd -ppucsd
    
 6.After Successful connection with MYSQL we can see Database = pucsdStudent and Table = Student and we can get whole data using command :-
       
@@ -34,9 +34,9 @@ Explanation of Dockerfile and its instructions :-
 FROM mysql:latest
 ENV MYSQL_ROOT_PASSWORD root
 ENV MYSQL_DATABASE pucsdStudent
-ENV MYSQL_USER admin
-ENV MYSQL_PASSWORD admin
-ADD Student.sql /docker-entrypoint-initdb.d
+ENV MYSQL_USER pucsd
+ENV MYSQL_PASSWORD pucsd
+ADD student.sql /docker-entrypoint-initdb.d
 EXPOSE 3306
 
 
